@@ -1,1 +1,3 @@
-/bazel-*
+/bazel-bin
+/bazel-craxample
+/bazel-out

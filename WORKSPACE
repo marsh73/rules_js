@@ -34,6 +34,6 @@ npm_translate_lock(
     verify_node_modules_ignored = "//cra:.bazelignore",
 )
 
-load("@npmt//:repositories.bzl", "npm_repositories")
+load("@npm//:repositories.bzl", "npm_repositories")
 
 npm_repositories()
