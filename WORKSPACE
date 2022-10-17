@@ -27,10 +27,6 @@ load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")
 npm_translate_lock(
     name = "npm",
     pnpm_lock = "//cra:pnpm-lock.yaml",
-    public_hoist_packages = {
-        "jest-watch-typeahead": [""],
-        "eslint": [""],
-    },
     verify_node_modules_ignored = "//cra:.bazelignore",
 )
 

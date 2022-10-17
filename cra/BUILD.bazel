@@ -40,6 +40,7 @@ _RUNTIME_DEPS = [
 cra_bin.react_scripts(
     # Note: If you want to change the name make sure you update BUILD_PATH below accordingly
     # https://create-react-app.dev/docs/advanced-configuration/
+    chdir = package_name(),
     name = "build",
     args = ["build"],
     srcs = _RUNTIME_DEPS + [
@@ -66,6 +67,7 @@ copy_to_bin(
 
 cra_bin.react_scripts_test(
     name = "test",
+    chdir = package_name(),
     args = [
         "test",
         # ibazel is the watch mode for Bazel when running tests
@@ -92,12 +94,14 @@ cra_bin.react_scripts_test(
         ":node_modules/@testing-library/jest-dom",
         ":node_modules/@testing-library/react",
         ":node_modules/@testing-library/user-event",
-        ":node_modules/typescript"
+        ":node_modules/typescript",
+        ":node_modules/jest-watch-typeahead",
     ],
 )
 
 cra_bin.react_scripts_binary(
     name = "start",
+    chdir = package_name(),
     args = [
         "start",
     ],
